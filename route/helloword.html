@@ -1,0 +1,20 @@
+<template>
+    <div class="hello">
+        /* eslint-disable no-new // 直接 eslint-disable 的作用是完全禁用ESLint进行检测，eslint的常用技巧之一 // 在js里面，new 一个对象，需要赋值给某个值（变量），用Vue实例化的时候，不需要赋值给值（变量），所以要单独给配一条规则 // ，给new Vue这行代码上面加这个注释，把这行代码规则的校验跳过，通过eslint-disable。 * import vue1 from 'vue' 这句话的意思是： 加载vue模块，并输入变量vue1。 * import后面的from指定模块文件的位置，可以是相对路径，也可以是绝对路径。如果是模块名，不带有路径，那么必须有配置文件，告诉js引擎该模块的位置。
+        <h1>{{ msg }}</h1>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'HelloWorld',
+        data () {
+            return {
+                msg: 'first test'
+            }
+        }
+    }
+</script>
+
+
+

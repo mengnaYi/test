@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue index</title>
+    <script type="text/javascript" src="lib/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="lib/vue.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/index.css"/>
+
+</head>
+<body>
+<p style="background: red;">v-for</p>
+<div id="app">
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Sex</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="person in people">
+            <td>{{ person.name }}</td>
+            <td>{{ person.age  }}</td>
+            <td>{{ person.sex  }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<p style="background: green;">v-bind</p>
+<div id="app1">
+    <ul class="pagination">
+        <li v-for="n in pageCount">
+<!--n从1开始-->
+            <a href="javascripit:void(0)" v-bind:class="activeNumber === n ? 'active' : ''">{{ n }}</a>
+        </li>
+    </ul>
+</div>
+<p style="background: blue;">v-on</p>
+<div id="app2">
+    <p><input type="text" v-model="message"></p>
+    <p>
+        <!--click事件直接绑定一个方法-->
+        <button v-on:click="greet">Greet</button>
+    </p>
+    <p>
+        <!--click事件使用内联语句-->
+        <button v-on:click="say('Hi')">Hi</button>
+    </p>
+</div>
+<p style="background: pink;">summary</p>
+<div id="total">
+    <form>
+        <fieldset>
+            <legend>test</legend>
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input id="name" v-model="newperson.name" type="text" />
+            </div>
+            <div class="form-group">
+                <label for="age">Age: </label>
+                <input id="age" v-model="newperson.age" type="text" />
+            </div>
+            <div class="form-group">
+                <label for="sex">Sex: </label>
+                <select v-model="newperson.sex">
+                    <option id="sex" value="male">男</option>
+                    <option value="female">女</option>
+                </select>
+            </div>
+            <div style="margin-left: 150px;">
+                <button  v-on:click="addperson">addPeople</button>
+            </div>
+        </fieldset>
+    </form>
+    <table id="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(person,index) in persons">
+            <td>{{person.name}}</td>
+            <td>{{person.age}}</td>
+            <td>{{person.sex}}</td>
+            <td>
+                <!--<span>{{this.index}}</span>-->
+                <button @click="deletePerson(index)">delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="js/index.js"></script>
+
+
+<!--下雪-->
+<script>
+//    (function($){
+////        &#10052;
+//        $.fn.snow=function(options){
+//            var $flake=$('<div id="flake" />').css({'position':'absolute','top':'-50px'}).html('🌸'),
+//            documentHeight=$(document).height(),
+//            documentWidth=$(document).width(),
+//            defaults={minSize:10,maxSize:20,newOn:500,flakeColor:"#FFFFFF"},
+//            options=$.extend({},defaults,options);
+//        var interval=setInterval(function(){
+//            var startPositionLeft=Math.random()*documentWidth-100,
+//            startOpacity=0.5+Math.random(),
+//            sizeFlake=options.minSize+Math.random()*options.maxSize,
+//            endPositionTop=documentHeight-40,endPositionLeft=startPositionLeft-100+Math.random()*200,
+//            durationFall=documentHeight*10+Math.random()*5000;
+//        $flake.clone().appendTo('body').css({left:startPositionLeft,opacity:startOpacity,'font-size':sizeFlake,color:options.flakeColor}).animate({top:endPositionTop,left:endPositionLeft,opacity:0.2},durationFall,'linear',function(){$(this).remove()});},options.newOn);
+//        };
+//    })(jQuery);
+//    $.fn.snow(
+//        { minSize: 5, maxSize: 50, newOn: 1000, flakeColor: '#00F' }
+//        );
+
+
+
+
+</script>
+
+</body>
+</html>

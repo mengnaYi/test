@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>route</title>
+    <script type="text/javascript" src="../lib/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="../lib/vue.js"></script>
+    <script type="text/javascript" src="../lib/vue-router.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/route.css"/>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <!-- 4、<router-link>默认会被渲染成一个 `<a>` 标签 ,to指令跳转到指定路径 -->
+            <router-link to="/home">Go to Home</router-link>
+            <router-link to="/about">Go to About</router-link>
+            <router-link to="/test">test</router-link>
+        </div>
+        <!-- 5、在页面上使用<router-view></router-view>标签，用于渲染匹配的组件 -->
+        <router-view></router-view>
+    </div>
+
+<script type="text/javascript" src="../js/route.js"></script>
+</body>
+</html>
